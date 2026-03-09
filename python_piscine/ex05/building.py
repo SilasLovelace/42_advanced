@@ -7,7 +7,7 @@ def count_characters(text):
     upper = sum(1 for c in text if c.isupper())
     lower = sum(1 for c in text if c.islower())
     punct = sum(1 for c in text if c in string.punctuation)
-    spaces = sum(1 for c in text if c == ' ')
+    spaces = sum(1 for c in text if c in ' \n')
     digits = sum(1 for c in text if c.isdigit())
     return upper, lower, punct, spaces, digits
 
@@ -29,7 +29,8 @@ def main():
     try:
         assert len(sys.argv) <= 2, "more than one argument provided"
         if len(sys.argv) == 1:
-            text = input("What is the text to count?\n")
+            print("What is the text to count?")
+            text = sys.stdin.readline()
         else:
             text = sys.argv[1]
         display_counts(text)

@@ -1,5 +1,4 @@
 import os
-import sys
 
 
 def ft_tqdm(lst: range) -> None:
@@ -28,5 +27,13 @@ def ft_tqdm(lst: range) -> None:
             f"\r{percent}%|[{bar}]{suffix}",
             end="",
             flush=True,
-            file=sys.stderr
         )
+
+
+def main():
+    """Entry point — no action when run directly."""
+    pass
+
+
+if __name__ == "__main__":
+    main()
